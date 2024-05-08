@@ -4,6 +4,7 @@ import WelcomeScreen from './screens/WelcomeScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import GameScreen from './screens/GameScreen';
+import EasyGameScreen from './screens/EasyGameScreen';
 
 export default function App() {
 
@@ -18,7 +19,8 @@ export default function App() {
           component={WelcomeScreen}
           options={{title: 'Welcome Screen'}}
         />
-        <Stack.Screen name="Game" component={GameScreen} />
+        <Stack.Screen name="EasyGame" component={EasyGameScreen} />
+        <Stack.Screen name="HardGame" component={GameScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -31,4 +33,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
 });

@@ -5,18 +5,26 @@ function GameScreen() {
     const IMAGES = [];
     IMAGES[0] = 'https://i.scdn.co/image/ab6761610000e5eb73d4facbd619ae025b5588c7'
     IMAGES[1] = 'https://envertmedia.com/wp-content/uploads/2021/08/Larry-June-1600x991.png'
-
+    IMAGES[2] = 'https://media.npr.org/assets/img/2021/11/16/gettyimages-1235223332_sq-e88ad790d447bd7dfcb0c1571047db26d39a8ee0.jpg'
+    IMAGES[3] = 'https://i.scdn.co/image/ab6761610000e5eb95ccca370d8bd50e84c222bc'
+    IMAGES[4] = 'https://www.ohio.edu/sites/default/files/styles/max_1300x1300/public/2024-01/Earl%20Sweatshirt%20copy%202.jpg?itok=J0wR5xhY'
+    IMAGES[5] = 'https://media.pitchfork.com/photos/662bb31e7e9055ca45187186/2:1/w_2560%2Cc_limit/drake%2520kendrick%2520lamar%2520diss%25202pac.jpg'
     const ARTISTS = [];
     ARTISTS[0] = 'Carti'
     ARTISTS[1] = 'Larry'
+    ARTISTS[2] = 'Travis'
+    ARTISTS[3] = 'Ken'
+    ARTISTS[4] = 'Earl'
+    ARTISTS[5] = 'Drake'
+
     const [rand, setRand] = useState(IMAGES[Math.floor(Math.random()*IMAGES.length)]);
     const carti =  'https://i.scdn.co/image/ab6761610000e5eb73d4facbd619ae025b5588c7';
     const [text, setText] = useState('');
-    const [counter, setCounter] = useState(1); 
+    const [counter, setCounter] = useState(0); 
     const [divOpacity, setivOpacity] = useState(1)
     const [buri, setUri] = useState(carti)
     const [artc, setArtc] = useState(0)
-    
+    const [count, setCount] = useState(1);
 
     const handleClick1 = () => { 
         setCounter(counter + 1); 
@@ -26,15 +34,17 @@ function GameScreen() {
             Alert.alert('Over!!!🤯 Next ROUND!!' )
             setCounter(1);
             changeImageSrc();
+
             
         }
     }; 
 
     const changeImageSrc = () => {
-        let imageC = 0;
-        imageC++;
-        setUri(IMAGES[imageC])
-    //setUri('https://envertmedia.com/wp-content/uploads/2021/08/Larry-June-1600x991.png');
+        //let imageC = 0;
+        setCount(count + 1)
+      //  imageC + 1;
+        setUri(IMAGES[count])
+        setArtc(count)
     
   }
 
@@ -47,8 +57,8 @@ const handleChange = (enterText) => {
         Alert.alert('Over! You Got it in ' + counter + ' tries')
         changeImageSrc()
         g++;
-        setArtc(g)
-        setCounter(1)
+       // setArtc(g)
+        setCounter(0)
     }
    
   };
